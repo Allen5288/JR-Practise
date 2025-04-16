@@ -1,0 +1,120 @@
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  color: #333;
+}
+
+//nesting
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+
+    &:hover {
+      background-color: #e0e0e0;
+    }
+  }
+}
+
+// variables - _ default is the same，but try to use the same
+// $card__name--like $card__name__like
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$font-stack: Arial, sans-serif;
+$base-font-size: 16px;
+$base-line-height: 1.5;
+$base-padding: 10px;
+$base-margin: 10px;
+$primary-border: 1px solid $primary-color;
+
+div.box {
+  background-color: $primary-color;
+  color: #fff;
+  padding: $base-padding;
+
+  &__title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+}
+
+h2.page-header {
+  border: $primary-border;
+}
+
+// nesting & to father selector
+.nav {
+  ul {
+    padding: auto;
+    li {
+      padding: auto;
+      a {
+        text-decoration: none;
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}
+
+@mixin alert($base-font-size, $base-line-height) {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+.alert-info{
+    @include alert(16px, 1.5);
+    background-color: $primary-color;
+}
+.alert-danger{
+    @include alert(22px, 2.5);
+    background-color: $secondary-color;
+}
+
+// @extend let one extend all from another
+.button {
+    width: 100%;
+    padding: 10px;
+}
+.button-info{
+    @extend .button;
+    background-color: $primary-color;
+    color: #fff;
+}
+
+// placeholder selector
+%ir {
+    color: #fff;
+    background-color: $primary-color;
+}
+.important-text{
+    @extend %ir;
+    font-size: 20px;
+}
+
+@each $animal in cat, dog, bird {
+  .#{$animal}-list {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      padding: 10px;
+      background-color: $primary-color;
+    }
+  }
+}
+
+// partial import
+@import 'base';
+h3 {
+    color: $color; // from base.scss
+    font-size: 20px;
+}

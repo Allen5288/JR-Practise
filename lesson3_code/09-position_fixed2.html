@@ -5,7 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>固定定位小技巧-固定到版心右侧</title>
-    <style></style>
+    <style>
+
+      /* 绝对定位，父级无定位 */
+      .fixed {
+        position: fixed; /* 固定定位 */
+        width: 10px;
+        height: 40px;
+        background-color: rgb(133, 10, 30);
+        left: 50%; /* 距离浏览器左侧50% */
+        margin-left: 205px; /* 向左移动405px */
+      }
+      .w {
+        width: 400px;
+        height: 1400px;
+        background-color: blue;
+        margin: 0 auto; /* 水平居中 */
+      }
+    </style>
   </head>
   <body>
     <div class="fixed"></div>

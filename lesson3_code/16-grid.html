@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout Example</title>
+    <style>
+        .box{
+            text-align: center;
+            font-size: 200%;
+            border: 1px solid #000
+        }
+        .wrapper{
+            display: grid;
+            /* grid-template-columns: 200px 200px 200px;
+            grid-template-columns: repeat(3, 200px); */
+            /* grid-template-columns: repeat(auto-fit,  200px); */
+            /* grid-template-columns: 200px 1fr 2fr; */
+            grid-template-columns: 200px 1fr minmax(200px, 2fr);
+        }
+    </style>
+<body>
+    <div class="wrapper">
+        <div class="item1 box">hello1</div>
+        <div class="item2 box">hello2</div>
+        <div class="item3 box">hello3</div>
+        <div class="item4 box">hello4</div>
+        <div class="item5 box">hello5</div>
+        <div class="item6 box">hello6</div>
+    </div>
+</body>
+</html>

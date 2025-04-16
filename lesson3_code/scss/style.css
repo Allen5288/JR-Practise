@@ -1,0 +1,111 @@
+body {
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  color: #333;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+}
+ul li:hover {
+  background-color: #e0e0e0;
+}
+
+div.box {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+}
+div.box__title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+h2.page-header {
+  border: 1px solid #3498db;
+}
+
+.nav ul {
+  padding: auto;
+}
+.nav ul li {
+  padding: auto;
+}
+.nav ul li a {
+  text-decoration: none;
+}
+.nav ul li a:hover {
+  color: #2ecc71;
+}
+
+.alert-info {
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #3498db;
+}
+
+.alert-danger {
+  font-size: 22px;
+  line-height: 2.5;
+  background-color: #2ecc71;
+}
+
+.button, .button-info {
+  width: 100%;
+  padding: 10px;
+}
+
+.button-info {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.important-text {
+  color: #fff;
+  background-color: #3498db;
+}
+
+.important-text {
+  font-size: 20px;
+}
+
+.cat-list {
+  list-style-type: none;
+  padding: 0;
+}
+.cat-list li {
+  padding: 10px;
+  background-color: #3498db;
+}
+
+.dog-list {
+  list-style-type: none;
+  padding: 0;
+}
+.dog-list li {
+  padding: 10px;
+  background-color: #3498db;
+}
+
+.bird-list {
+  list-style-type: none;
+  padding: 0;
+}
+.bird-list li {
+  padding: 10px;
+  background-color: #3498db;
+}
+
+h3 {
+  color: #3498db;
+  font-size: 20px;
+}/*# sourceMappingURL=style.css.map */

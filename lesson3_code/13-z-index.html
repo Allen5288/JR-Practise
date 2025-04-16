@@ -7,7 +7,27 @@
     <title>定位的堆叠顺序</title>
     <style>
       /* z-index仅对定位元素(不为static时)生效 */
-     
+     .box{
+      width: 200px;
+      height: 200px;
+      position: absolute; /* 设置为绝对定位 */
+      top: 0; /* 向下移动0px */
+      left: 0; /* 向右移动0px */
+     }
+     .box1{
+      background-color: blue;
+      z-index: 1; /* 设置层级为1 */
+     }
+     .box2{
+      background-color: red;
+      z-index: 2; /* 设置层级为2 */
+      top: 50px; /* 向下移动50px */
+      left: 50px; /* 向右移动50px */
+     }
+     .box3{
+      background-color: yellow;
+      z-index: 3; /* 设置层级为3 */
+     }
     </style>
   </head>
   <body>
