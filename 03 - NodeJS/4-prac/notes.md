@@ -1,71 +1,103 @@
-项目要求：电影管理系统
-基础部分：Movies
-• 获取所有电影：支持关键字搜索、按评分排序、分页查询。
-• 获取单个电影：通过 ID 获取电影详细信息。
-• 添加电影：新增一个电影条目。
-• 更新电影：修改电影信息。
-• 删除电影：删除指定电影。
-扩展部分：Reviews
-• 添加评论：给电影添加评论，并记录评分。
-• 获取评论：获取某部电影的所有评论。
+Project Requirements: Movie Management System
 
-数据格式
+## Basic Features: Movies
+- **Get All Movies**: Support keyword search, rating-based sorting, and pagination.
+- **Get a Single Movie**: Retrieve detailed information about a specific movie by its ID.
+- **Add a Movie**: Add a new movie entry.
+- **Update a Movie**: Modify information for an existing movie.
+- **Delete a Movie**: Remove a specified movie.
 
-```
+## Extension Features: Reviews
+- **Add a Review**: Add a review to a movie and record the rating.
+- **Get Reviews**: Retrieve all reviews for a specific movie.
+
+### Data Format
+```javascript
 const movies = [
-	  {
-	    id: 1,
-	    title: "Inception",
-	    description: "A skilled thief steals secrets from dreams.",
-	    types: ["Sci-Fi"],
-	    averageRating: 4.5,
-	    reviews: [
-	      { id: 1, content: "Amazing movie!", rating: 5 },
-	      { id: 2, content: "Great visuals.", rating: 4 },
-	    ],
-	  },
+  {
+    id: 1,
+    title: "Inception",
+    description: "A skilled thief steals secrets from dreams.",
+    types: ["Sci-Fi"],
+    averageRating: 4.5,
+    reviews: [
+      { id: 1, content: "Amazing movie!", rating: 5 },
+      { id: 2, content: "Great visuals.", rating: 4 },
+    ],
+  },
 ];
 ```
 
-1. 设计 API endpoints （Restful API)
-2. 用 express 实现后端 server （只能使用 express.js 作为 dependency）
-3. 对接前端页面
+## API Endpoints (RESTful API)
 
-获取所有电影：支持关键字搜索、按评分排序、分页查询。
-GET /v1/movies - 200
-query: sort (rating, -rating)
-page
-limit (pageSize)
-keyword (q)
+### Get All Movies
+`GET /v1/movies - 200`
 
-    获取单个电影：通过 ID 获取电影详细信息。
-    GET /V1/movies/:id - 200
+Retrieve all movies with support for keyword search, rating-based sorting, and pagination.
 
+### Pagination and Filtering
+| Parameter | Description |
+| --- | --- |
+| page | Page number |
+| limit | Number of items per page (page size) |
+| keyword (q) | Search term |
 
-    添加电影：新增一个电影条目。
-    新添加的电影，应该最先返回
-    POST /v1/movies - 201
-    body: title
-          description
-          types (string)
+### Get a Single Movie
+`GET /v1/movies/:id - 200`
 
+Retrieve detailed information about a specific movie by its ID.
 
-    更新电影：修改电影信息。
-    PUT(PATCH) /v1/movies/:id - 200
-    body: title
-          description
-          types (string)
+### Add a New Movie
+`POST /v1/movies - 201`
 
-    删除电影：删除指定电影。
-    DELETE /v1/movies/:id - 204
+Add a new movie entry. Newly added movies should appear first in results.
 
-扩展部分：Reviews
-添加评论：给电影添加评论，并记录评分。
-POST /v1/movies/:id/reviews
-body: content
-rating
+**Request Body:**
+```json
+{
+  "title": "Movie Title",
+  "description": "Movie Description",
+  "types": ["Genre1", "Genre2"]
+}
+```
 
-    获取评论：获取某部电影的所有评论。
-    GET /v1/movies/:id/reviews
+### Update a Movie
+`PUT/PATCH /v1/movies/:id - 200`
 
-// Mason: xxxx
+Modify information for an existing movie.
+
+**Request Body:**
+```json
+{
+  "title": "Updated Title",
+  "description": "Updated Description",
+  "types": ["Updated Genre"]
+}
+```
+
+### Delete a Movie
+`DELETE /v1/movies/:id - 204`
+
+Delete a specified movie.
+
+## Reviews Extension
+
+### Add a Review
+`POST /v1/movies/:id/reviews - 201`
+
+Add a review to a movie and record the rating.
+
+**Request Body:**
+```json
+{
+  "content": "Review text",
+  "rating": 4.5
+}
+```
+
+### Get Reviews
+`GET /v1/movies/:id/reviews - 200`
+
+Retrieve all reviews for a specific movie.
+
+<!-- Notes: This API design follows RESTful principles -->
